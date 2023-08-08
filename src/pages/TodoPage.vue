@@ -1,0 +1,159 @@
+<template>
+    <div class="text-h5 q-ma-md text-weight-light">待办事项</div>
+    <div class="row q-pa-sm">
+      <div class="col-12 col-md-4">
+        <div class="q-ma-sm">
+          <q-input
+            placeholder="输入任务标题"
+            label="新增任务"
+            square
+            outlined
+            v-model="newTask.title"
+            @keyup.enter="addNewTask"
+          >
+            <template v-slot:label>
+              <q-icon name="done" size="24px" class="q-mr-xs"></q-icon>新增任务
+            </template>
+            <template v-slot:append>
+              <q-btn round flat icon="mic_none" color="primary"></q-btn>
+              <q-btn round flat icon="edit" color="primary"></q-btn>
+              <q-btn
+                round
+                flat
+                icon="add"
+                color="primary"
+                @click.stop="addNewTask"
+              ></q-btn>
+            </template>
+          </q-input>
+          <q-card v-if="todoList.length" class="q-my-md">
+            <todo-list
+              title="未完成"
+              :list="undoneList"
+              @delete="deleteTodo"
+            ></todo-list>
+            <q-separator></q-separator>
+            <todo-list
+              title="已完成"
+              :list="doneList"
+              @delete="deleteTodo"
+            ></todo-list>
+          </q-card>
+          <div class="text-center" v-else style="opacity: 0.5">
+            <q-icon name="done_all" size="100px" color="primary"></q-icon>
+            <div class="text-h6 text-primary text-center">暂无任务</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <q-card class="q-ma-sm">
+          <q-date
+            v-model="date"
+            :events="events"
+            class="full-width"
+            event-color="orange"
+          />
+        </q-card>
+      </div>
+      <div class="col-12 col-md-4">
+        <q-card class="q-ma-sm">
+          <q-tab-panels
+            v-model="date"
+            animated
+            transition-prev="jump-up"
+            transition-next="jump-up"
+          >
+            <q-tab-panel :name="event" v-for="event in events" :key="event">
+              <div class="text-h4 q-mb-md">{{ event }}</div>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis
+                praesentium cumque magnam odio iure quidem, quod illum numquam
+                possimus obcaecati commodi minima assumenda consectetur culpa
+                fuga nulla ullam. In, libero.
+              </p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis
+                praesentium cumque magnam odio iure quidem, quod illum numquam
+                possimus obcaecati commodi minima assumenda consectetur culpa
+                fuga nulla ullam. In, libero.
+              </p>
+            </q-tab-panel>
+          </q-tab-panels>
+        </q-card>
+      </div>
+    </div>
+</template>
+
+<script lang="ts" setup>
+import TodoList from '../components/TodoList.vue';
+import { computed, ref } from 'vue';
+import { useQuasar } from 'quasar';
+import { Task } from '../model/models';
+
+const $q = useQuasar();
+const todoList = ref<Task[]>([
+  {
+    id: 1,
+    done: false,
+    title: '待办1',
+    content:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sapiente assumenda rerum? Facere, incidunt. Cum repellendus mollitia perferendis enim nisi eos aliquam, quasi hic, quas voluptatum facere ab reiciendis minus!',
+  },
+  {
+    id: 2,
+    done: false,
+    title: '待办2',
+    content:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sapiente assumenda rerum? Facere, incidunt. Cum repellendus mollitia perferendis enim nisi eos aliquam, quasi hic, quas voluptatum facere ab reiciendis minus!',
+  },
+  {
+    id: 3,
+    done: false,
+    title: '待办3',
+    content:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sapiente assumenda rerum? Facere, incidunt. Cum repellendus mollitia perferendis enim nisi eos aliquam, quasi hic, quas voluptatum facere ab reiciendis minus!',
+  },
+]);
+const doneList = computed<Task[]>(() => {
+  return todoList.value.filter((todo) => todo.done);
+});
+const undoneList = computed<Task[]>(() => {
+  return todoList.value.filter((todo) => !todo.done);
+});
+const newTask = ref<Task>({
+  id: todoList.value.length + 1,
+  done: false,
+  title: '',
+  content: '',
+});
+function deleteTodo(index: number) {
+  $q.dialog({
+    title: '确认',
+    message: '确定删除吗?',
+    cancel: true,
+    persistent: true,
+  }).onOk(() => {
+    todoList.value.splice(index, 1);
+    $q.notify({
+      message: '任务已删除',
+      icon: 'delete',
+      color: 'primary',
+      timeout: 1000,
+    });
+  });
+}
+function addNewTask() {
+  const task: Task = {
+    id: newTask.value.id,
+    done: newTask.value.done,
+    title: newTask.value.title,
+    content: newTask.value.content,
+  };
+  todoList.value.unshift(task);
+  newTask.value.title = '';
+}
+
+const date = ref('2023-08-06');
+const events = ref(['2023/08/06', '2023/08/12', '2023/08/17']);
+</script>
+../model/models
