@@ -1,5 +1,5 @@
 <template>
-  <q-card class="q-ma-sm q-pa-md" :id="uuid">
+  <q-card class="q-ma-sm q-pa-md" flat bordered :id="uuid">
     <div class="text-h6 text-grey-8">{{ props.title }}</div>
     <div :id="props.id" style="height: 300px; width: 100%"></div>
   </q-card>

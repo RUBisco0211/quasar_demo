@@ -1,9 +1,9 @@
 <template>
   <q-page-sticky position="bottom-right" :offset="[18, 18]">
-    <q-fab icon="add" direction="up" color="primary">
+    <q-fab icon="bi-plus-lg" direction="up" color="primary">
       <q-fab-action
         color="primary"
-        icon="fingerprint"
+        icon="bi-fingerprint"
         @click="router.push('/auth')"
       />
     </q-fab>

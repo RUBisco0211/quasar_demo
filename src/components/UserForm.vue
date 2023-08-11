@@ -1,6 +1,6 @@
 <template>
   <div class="q-ma-sm">
-    <q-card>
+    <q-card flat bordered>
       <q-form class="q-pa-md">
         <div class="text-h6 q-mb-md text-grey-8">用户表单</div>
         <q-input
@@ -9,10 +9,10 @@
           label-slot
           class="q-my-xs"
           clearable
-          clear-icon="clear"
+          clear-icon="bi-x"
         >
           <template v-slot:label>
-            <q-icon name="person" size="24px" class="q-mr-xs"></q-icon>用户名
+            <q-icon name="bi-person" size="20px" class="q-mr-xs"></q-icon>用户名
           </template>
         </q-input>
         <q-input
@@ -21,10 +21,11 @@
           label-slot
           class="q-my-xs"
           clearable
-          clear-icon="clear"
+          clear-icon="bi-x"
         >
           <template v-slot:label>
-            <q-icon name="face" size="24px" class="q-mr-xs"></q-icon>昵称
+            <q-icon name="bi-sunglasses" size="20px" class="q-mr-xs"></q-icon
+            >昵称
           </template>
         </q-input>
         <q-input
@@ -33,10 +34,10 @@
           label-slot
           class="q-my-xs"
           clearable
-          clear-icon="clear"
+          clear-icon="bi-x"
         >
           <template v-slot:label>
-            <q-icon name="email" size="24px" class="q-mr-xs"></q-icon>邮箱地址
+            <q-icon name="bi-at" size="20px" class="q-mr-xs"></q-icon>邮箱地址
           </template>
           <template v-slot:append>
             <q-select
@@ -53,10 +54,11 @@
           label-slot
           class="q-my-xs"
           clearable
-          clear-icon="clear"
+          clear-icon="bi-x"
         >
           <template v-slot:label>
-            <q-icon name="phone" size="24px" class="q-mr-xs"></q-icon>电话号码
+            <q-icon name="bi-telephone" size="20px" class="q-mr-xs"></q-icon
+            >电话号码
           </template>
         </q-input>
         <q-select
@@ -67,10 +69,10 @@
           label-slot
           class="q-my-xs"
           clearable
-          clear-icon="clear"
+          clear-icon="bi-x"
         >
           <template v-slot:label>
-            <q-icon name="place" size="24px" class="q-mr-xs"></q-icon>地区
+            <q-icon name="bi-pin-map" size="20px" class="q-mr-xs"></q-icon>地区
           </template>
         </q-select>
         <q-option-group
@@ -87,7 +89,7 @@
           class="q-my-xs"
         >
           <template v-slot:label>
-            <q-icon name="attach_file" size="24px" class="q-mr-xs"></q-icon
+            <q-icon name="bi-paperclip" size="20px" class="q-mr-xs"></q-icon
             >上传文件
           </template>
         </q-file>
@@ -100,7 +102,7 @@
           label-slot
         >
           <template v-slot:before>
-            <q-btn flat round icon="event" color="primary">
+            <q-btn flat round icon="bi-calendar-date" color="primary">
               <q-popup-proxy transition-show="scale" transition-hide="scale">
                 <q-date v-model="date" mask="YYYY-MM-DD HH:mm" flat>
                   <div class="row items-center justify-end">
@@ -113,7 +115,7 @@
                 ></q-date>
               </q-popup-proxy>
             </q-btn>
-            <q-btn flat round icon="access_time" color="primary">
+            <q-btn flat round icon="bi-clock" color="primary">
               <q-popup-proxy transition-show="scale" transition-hide="scale">
                 <q-time v-model="date" mask="YYYY-MM-DD HH:mm" flat format24h>
                   <div class="row items-center justify-end">
@@ -131,7 +133,7 @@
         <div class="row">
           <q-input v-model="dateRange.from" label="开始日期" class="col-5">
             <template v-slot:before>
-              <q-btn flat icon="event" color="primary" round>
+              <q-btn flat icon="bi-calendar-range" color="primary" round>
                 <q-tooltip>选择日期范围</q-tooltip>
                 <q-popup-proxy transition-show="scale" transition-hide="scale">
                   <q-date range v-model="dateRange" mask="YYYY-MM-DD">

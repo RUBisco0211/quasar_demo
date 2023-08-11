@@ -16,8 +16,8 @@
             v-model="item.done"
             color="primary"
             class="no-pointer-events"
-            checked-icon="task_alt"
-            unchecked-icon="radio_button_unchecked"
+            checked-icon="bi-check-circle-fill"
+            unchecked-icon="bi-circle"
           ></q-checkbox>
         </q-item-section>
         <q-item-section>
@@ -25,7 +25,7 @@
         </q-item-section>
         <q-item-section side class="q-mx-none">
           <q-btn
-            icon="delete_outline"
+            icon="bi-trash3"
             flat
             dense
             round

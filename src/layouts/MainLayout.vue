@@ -6,17 +6,17 @@
           flat
           dense
           round
-          :icon="leftDrawerOpen ? 'menu_open' : 'menu'"
+          icon="bi-list"
           aria-label="Menu"
           @click="leftDrawerOpen = !leftDrawerOpen"
         />
         <bread-crumbs></bread-crumbs>
         <q-space />
         <div class="gt-xs">
-          <q-btn round flat icon="notifications">
+          <q-btn round flat icon="bi-bell">
             <q-tooltip>通知</q-tooltip>
           </q-btn>
-          <q-btn round flat icon="email">
+          <q-btn round flat icon="bi-chat-square-quote">
             <q-badge
               v-if="messages.length"
               color="negative"
@@ -62,13 +62,13 @@
             <q-list class="text-grey-8">
               <q-item clickable>
                 <q-item-section avatar>
-                  <q-icon name="person"></q-icon>
+                  <q-icon name="bi-person"></q-icon>
                 </q-item-section>
                 <q-item-section>个人中心</q-item-section>
               </q-item>
               <q-item clickable>
                 <q-item-section avatar>
-                  <q-icon name="cancel"></q-icon>
+                  <q-icon name="bi-x"></q-icon>
                 </q-item-section>
                 <q-item-section>退出登录</q-item-section>
               </q-item>
@@ -84,25 +84,25 @@
               <q-list class="text-grey-8">
                 <q-item clickable>
                   <q-item-section avatar>
-                    <q-icon name="notifications"></q-icon>
+                    <q-icon name="bi-bell"></q-icon>
                   </q-item-section>
                   <q-item-section>通知</q-item-section>
                 </q-item>
                 <q-item clickable>
                   <q-item-section avatar>
-                    <q-icon name="mail"></q-icon>
+                    <q-icon name="bi-chat-square-quote"></q-icon>
                   </q-item-section>
                   <q-item-section>消息</q-item-section>
                 </q-item>
                 <q-item clickable>
                   <q-item-section avatar>
-                    <q-icon name="person"></q-icon>
+                    <q-icon name="bi-person"></q-icon>
                   </q-item-section>
                   <q-item-section>个人中心</q-item-section>
                 </q-item>
                 <q-item clickable>
                   <q-item-section avatar>
-                    <q-icon name="cancel"></q-icon>
+                    <q-icon name="bi-x"></q-icon>
                   </q-item-section>
                   <q-item-section>退出登录</q-item-section>
                 </q-item>
@@ -114,17 +114,21 @@
     </q-header>
     <q-drawer
       v-model="leftDrawerOpen"
-      bordered
+      elevated
       :mini="miniState"
       @mouseover="miniState = false"
       @mouseout="miniState = true"
       show-if-above
       :width="250"
       :breakpoint="800"
-      class="bg-white text-grey-8"
+      class="bg-primary text-white"
     >
       <q-scroll-area style="height: 100%">
-        <q-item to="/" style="height: 58.81px" class="text-weight-bolder">
+        <q-item
+          to="/"
+          style="height: 58.81px"
+          class="text-weight-bolder bg-secondary"
+        >
           <q-item-section avatar>
             <q-avatar size="lg">
               <q-img src="../assets/icons/favicon-32x32.png"></q-img>
@@ -132,7 +136,7 @@
           </q-item-section>
           <q-item-section>
             <div
-              class="text-h6"
+              class="text-h6 text-white"
               style="
                 font-family: 'Gill Sans', 'Gill Sans MT', Calibri,
                   'Trebuchet MS', sans-serif;
@@ -194,6 +198,6 @@ const messages = ref([
 </script>
 <style lang="scss">
 .active-item {
-  background-color: $primary;
+  background-color: $secondary;
 }
 </style>

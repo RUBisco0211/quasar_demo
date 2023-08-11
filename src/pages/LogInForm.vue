@@ -7,13 +7,14 @@
       label-slot
       class="q-my-md"
       clearable
-      clear-icon="clear"
+      clear-icon="bi-x"
       hint="请输入您的账号"
       lazy-rules
       :rules="[(val) => (val && val.length > 0) || '请输入您的账号']"
     >
       <template v-slot:label>
-        <q-icon name="person" size="24px" class="q-mr-xs"></q-icon>账号 *
+        <q-icon name="bi-person-fill" size="20px" class="q-mr-xs"></q-icon>账号
+        *
       </template>
     </q-input>
     <q-input
@@ -23,21 +24,21 @@
       label-slot
       class="q-my-md"
       clearable
-      clear-icon="clear"
+      clear-icon="bi-x"
       hint="请输入您的密码"
       lazy-rules
       :rules="[(val) => (val && val.length > 0) || '请输入您的密码']"
     >
       <template v-slot:label>
-        <q-icon name="lock" size="24px" class="q-mr-xs"></q-icon>密码 *
+        <q-icon name="bi-lock-fill" size="20px" class="q-mr-xs"></q-icon>密码 *
       </template>
     </q-input>
     <q-checkbox
       dense
       v-model="remember"
       label="记住密码"
-      checked-icon="task_alt"
-      unchecked-icon="radio_button_unchecked"
+      checked-icon="bi-check-circle-fill"
+      unchecked-icon="bi-circle"
     ></q-checkbox>
     <div style="display: flex; justify-content: center" class="q-my-md">
       <q-btn
@@ -46,7 +47,7 @@
         color="primary"
         size="lg"
         class="glossy"
-        icon="fingerprint"
+        icon="bi-fingerprint"
         @click="login"
       >
         <q-tooltip anchor="top middle" self="bottom middle"> 登录 </q-tooltip>

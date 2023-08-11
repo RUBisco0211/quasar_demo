@@ -10,7 +10,7 @@ const routes: RouteRecordRaw[] = [
         name: '',
         redirect: '/admin/home',
         meta: {
-          icon: 'all_inbox',
+          icon: 'bi-inboxes-fill',
           label: '管理系统',
         },
         component: () => import('layouts/MainLayout.vue'),
@@ -19,7 +19,7 @@ const routes: RouteRecordRaw[] = [
             path: 'home',
             name: 'home',
             meta: {
-              icon: 'home_work',
+              icon: 'bi-house',
               label: '主页',
             },
             component: () => import('pages/DashBoard.vue'),
@@ -28,7 +28,7 @@ const routes: RouteRecordRaw[] = [
             path: 'todo',
             name: 'todo',
             meta: {
-              icon: 'done_all',
+              icon: 'bi-list-check',
               label: '待办事项',
             },
             component: () => import('pages/TodoPage.vue'),
@@ -37,7 +37,7 @@ const routes: RouteRecordRaw[] = [
             path: 'chart',
             name: 'chart',
             meta: {
-              icon: 'insert_chart',
+              icon: 'bi-pie-chart',
               label: '图表',
             },
             component: () => import('pages/ChartPage.vue'),
@@ -46,25 +46,16 @@ const routes: RouteRecordRaw[] = [
             path: 'userManage',
             name: 'userManage',
             meta: {
-              icon: 'group',
+              icon: 'bi-people',
               label: '用户管理',
             },
             component: () => import('pages/UserManagement.vue'),
           },
           {
-            path: 'document',
-            name: 'document',
-            meta: {
-              icon: 'book',
-              label: '文档',
-            },
-            component: () => import('pages/DocumentPage.vue'),
-          },
-          {
             path: 'info',
             name: 'info',
             meta: {
-              icon: 'info',
+              icon: 'bi-info-circle',
               label: '关于',
             },
             component: () => import('pages/InfoPage.vue'),

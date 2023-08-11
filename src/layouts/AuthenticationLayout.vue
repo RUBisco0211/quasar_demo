@@ -33,13 +33,13 @@
           <q-route-tab
             name="login"
             label="登录"
-            icon="fingerprint"
+            icon="bi-fingerprint"
             to="/auth/login"
           ></q-route-tab>
           <q-route-tab
             name="signup"
             label="注册"
-            icon="person_add"
+            icon="bi-person-add"
             to="/auth/signup"
           ></q-route-tab>
         </q-tabs>

@@ -6,14 +6,15 @@
       stack-label
       label-slot
       class="q-my-md"
-      clear-icon="clear"
+      clear-icon="bi-x"
       clearable
       hint="请输入您的账号"
       lazy-rules
       :rules="[(val) => (val && val.length > 0) || '请输入您的账号']"
     >
       <template v-slot:label>
-        <q-icon name="person" size="24px" class="q-mr-xs"></q-icon>账号 *
+        <q-icon name="bi-person-fill" size="20px" class="q-mr-xs"></q-icon>账号
+        *
       </template>
     </q-input>
     <q-input
@@ -22,14 +23,14 @@
       stack-label
       label-slot
       class="q-my-md"
-      clear-icon="clear"
+      clear-icon="bi-x"
       clearable
       hint="请输入您的密码"
       lazy-rules
       :rules="[(val) => (val && val.length > 0) || '请输入您的密码']"
     >
       <template v-slot:label>
-        <q-icon name="lock" size="24px" class="q-mr-xs"></q-icon>密码 *
+        <q-icon name="bi-lock-fill" size="20px" class="q-mr-xs"></q-icon>密码 *
       </template>
     </q-input>
     <q-input
@@ -38,14 +39,14 @@
       stack-label
       label-slot
       class="q-my-md"
-      clear-icon="clear"
+      clear-icon="bi-x"
       clearable
       hint="请重新输入密码"
       lazy-rules
       :rules="[(val) => (val && val.length > 0) || '请重新输入密码']"
     >
       <template v-slot:label>
-        <q-icon name="lock" size="24px" class="q-mr-xs"></q-icon>密码 *
+        <q-icon name="bi-lock-fill" size="20px" class="q-mr-xs"></q-icon>密码 *
       </template>
     </q-input>
     <div style="display: flex; justify-content: center" class="q-my-md">
@@ -55,7 +56,7 @@
         color="primary"
         size="lg"
         class="glossy"
-        icon="person_add"
+        icon="bi-person-add"
       >
         <q-tooltip anchor="top middle" self="bottom middle"> 注册 </q-tooltip>
       </q-btn>

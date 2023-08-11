@@ -1,6 +1,8 @@
 <template>
   <div class="q-ma-sm">
     <q-table
+      flat
+      bordered
       title="用户管理"
       class="text-dark"
       :rows="users"
@@ -15,18 +17,17 @@
         <q-checkbox
           dense
           v-model="scope.selected"
-          checked-icon="task_alt"
-          unchecked-icon="radio_button_unchecked"
-          indeterminate-icon="remove_circle_outline"
+          checked-icon="bi-check-circle-fill"
+          indeterminate-icon="bi-dash-circle-fill"
+          unchecked-icon="bi-circle"
         ></q-checkbox>
       </template>
       <template v-slot:body-selection="scope">
         <q-checkbox
           dense
           v-model="scope.selected"
-          checked-icon="task_alt"
-          unchecked-icon="radio_button_unchecked"
-          indeterminate-icon="remove_circle_outline"
+          checked-icon="bi-check-circle-fill"
+          unchecked-icon="bi-circle"
         ></q-checkbox>
       </template>
       <template v-slot:top-right>
@@ -35,12 +36,12 @@
             flat
             stack
             color="primary"
-            icon="add"
+            icon="bi-plus-lg"
             label="新增"
             @click="add"
           />
-          <q-btn flat stack color="primary" icon="search" label="搜索" />
-          <q-btn flat stack color="primary" icon="archive" label="导出" />
+          <q-btn flat stack color="primary" icon="bi-search" label="搜索" />
+          <q-btn flat stack color="primary" icon="bi-download" label="导出" />
         </q-btn-group>
       </template>
     </q-table>
