@@ -124,11 +124,7 @@
       class="bg-primary text-white"
     >
       <q-scroll-area style="height: 100%">
-        <q-item
-          to="/"
-          style="height: 58.81px"
-          class="text-weight-bolder bg-secondary"
-        >
+        <q-item to="/" style="height: 58.81px" class="text-weight-bolder">
           <q-item-section avatar>
             <q-avatar size="lg">
               <q-img src="../assets/icons/favicon-32x32.png"></q-img>

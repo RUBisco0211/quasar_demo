@@ -1,5 +1,5 @@
 <template>
-  <q-card class="q-ma-sm">
+  <q-card class="q-ma-sm" flat bordered>
     <q-img :src="props.src"></q-img>
     <q-card-section>
       <div class="text-h6">{{ props.title }}</div>

@@ -19,7 +19,7 @@ const routes: RouteRecordRaw[] = [
             path: 'home',
             name: 'home',
             meta: {
-              icon: 'bi-house',
+              icon: 'bi-speedometer2',
               label: '主页',
             },
             component: () => import('pages/DashBoard.vue'),

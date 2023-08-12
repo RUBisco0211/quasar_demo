@@ -72,7 +72,7 @@
           clear-icon="bi-x"
         >
           <template v-slot:label>
-            <q-icon name="bi-pin-map" size="20px" class="q-mr-xs"></q-icon>地区
+            <q-icon name="bi-geo-alt" size="20px" class="q-mr-xs"></q-icon>地区
           </template>
         </q-select>
         <q-option-group
@@ -81,18 +81,13 @@
           v-model="form.location"
           inline
         />
-        <q-file
-          v-model="file"
-          label-slot
-          clearable
-          clear-icon="clear"
-          class="q-my-xs"
-        >
-          <template v-slot:label>
-            <q-icon name="bi-paperclip" size="20px" class="q-mr-xs"></q-icon
-            >上传文件
-          </template>
-        </q-file>
+        <q-uploader
+          label="上传文件"
+          multiple
+          flat
+          bordered
+          class="full-width"
+        />
         <q-input
           v-model="date"
           clearable

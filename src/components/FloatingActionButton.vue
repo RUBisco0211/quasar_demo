@@ -1,6 +1,6 @@
 <template>
   <q-page-sticky position="bottom-right" :offset="[18, 18]">
-    <q-fab icon="bi-plus-lg" direction="up" color="primary">
+    <q-fab icon="bi-plus-lg" text-color="dark" direction="up" color="warning">
       <q-fab-action
         color="primary"
         icon="bi-fingerprint"

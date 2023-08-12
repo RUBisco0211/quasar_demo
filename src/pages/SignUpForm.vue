@@ -30,7 +30,7 @@
       :rules="[(val) => (val && val.length > 0) || '请输入您的密码']"
     >
       <template v-slot:label>
-        <q-icon name="bi-lock-fill" size="20px" class="q-mr-xs"></q-icon>密码 *
+        <q-icon name="bi-key-fill" size="20px" class="q-mr-xs"></q-icon>密码 *
       </template>
     </q-input>
     <q-input
@@ -46,7 +46,7 @@
       :rules="[(val) => (val && val.length > 0) || '请重新输入密码']"
     >
       <template v-slot:label>
-        <q-icon name="bi-lock-fill" size="20px" class="q-mr-xs"></q-icon>密码 *
+        <q-icon name="bi-key-fill" size="20px" class="q-mr-xs"></q-icon>密码 *
       </template>
     </q-input>
     <div style="display: flex; justify-content: center" class="q-my-md">

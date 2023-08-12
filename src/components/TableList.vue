@@ -35,6 +35,14 @@
           <q-btn
             flat
             stack
+            color="negative"
+            icon="bi-trash3"
+            label="删除"
+            :disable="!selected.length"
+          ></q-btn>
+          <q-btn
+            flat
+            stack
             color="primary"
             icon="bi-plus-lg"
             label="新增"
@@ -43,6 +51,17 @@
           <q-btn flat stack color="primary" icon="bi-search" label="搜索" />
           <q-btn flat stack color="primary" icon="bi-download" label="导出" />
         </q-btn-group>
+      </template>
+      <template v-slot:body-cell-status="props">
+        <q-tr :props="props">
+          <q-td key="id" :props="props">
+            <q-badge
+              :color="props.row.status === 'normal' ? 'primary' : 'negative'"
+              text-color="white"
+              >{{ props.row.status }}</q-badge
+            >
+          </q-td>
+        </q-tr>
       </template>
     </q-table>
   </div>
@@ -57,7 +76,8 @@ const users = ref([
     email: '1205456072@qq.com',
     phone: '18759125150',
     createTime: '2023-08-03 09:30:32',
-    status: 'normal',
+    status: 'blocked',
+    operations: null,
   },
   {
     id: 2,
@@ -67,6 +87,7 @@ const users = ref([
     phone: '18759125150',
     createTime: '2023-08-03 09:30:32',
     status: 'normal',
+    operations: null,
   },
   {
     id: 3,
@@ -76,6 +97,7 @@ const users = ref([
     phone: '18759125150',
     createTime: '2023-08-03 09:30:32',
     status: 'normal',
+    operations: null,
   },
   {
     id: 4,
@@ -85,6 +107,7 @@ const users = ref([
     phone: '18759125150',
     createTime: '2023-08-03 09:30:32',
     status: 'normal',
+    operations: null,
   },
 ]);
 const keys = Object.keys(users.value[0]);

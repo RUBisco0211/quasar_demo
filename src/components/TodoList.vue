@@ -26,6 +26,7 @@
         <q-item-section side class="q-mx-none">
           <q-btn
             icon="bi-trash3"
+            color="negative"
             flat
             dense
             round

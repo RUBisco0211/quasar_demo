@@ -137,7 +137,7 @@ function deleteTodo(index: number) {
     todoList.value.splice(index, 1);
     $q.notify({
       message: '任务已删除',
-      icon: 'delete',
+      icon: 'bi-trash3',
       color: 'primary',
       timeout: 1000,
     });

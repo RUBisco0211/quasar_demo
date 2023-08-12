@@ -1,7 +1,12 @@
 <template>
-  <q-card class="q-ma-sm q-pa-md" flat bordered :id="uuid">
-    <div class="text-h6 text-grey-8">{{ props.title }}</div>
-    <div :id="props.id" style="height: 300px; width: 100%"></div>
+  <q-card class="q-ma-sm" flat bordered :id="uuid">
+    <div class="text-h6 text-grey-8 q-pa-md">{{ props.title }}</div>
+    <q-separator></q-separator>
+    <div
+      :id="props.id"
+      class="q-pa-md"
+      style="height: 300px; width: 100%"
+    ></div>
   </q-card>
 </template>
 <script lang="ts" setup>
