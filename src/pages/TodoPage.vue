@@ -130,9 +130,17 @@ const newTask = ref<Task>({
 function deleteTodo(index: number) {
   $q.dialog({
     title: '确认',
-    message: '确定删除吗?',
-    cancel: true,
+    message: '确定删除吗?' + todoList.value.length + ',' + index,
     persistent: true,
+    focus: 'none',
+    ok: {
+      label: '确定',
+      flat: true,
+    },
+    cancel: {
+      label: '取消',
+      flat: true,
+    },
   }).onOk(() => {
     todoList.value.splice(index, 1);
     $q.notify({
@@ -144,13 +152,9 @@ function deleteTodo(index: number) {
   });
 }
 function addNewTask() {
-  const task: Task = {
-    id: newTask.value.id,
-    done: newTask.value.done,
-    title: newTask.value.title,
-    content: newTask.value.content,
-  };
-  todoList.value.unshift(task);
+  newTask.value.id = todoList.value.length + 1;
+  const task: Task = { ...newTask.value };
+  todoList.value.push(task);
   newTask.value.title = '';
 }
 
