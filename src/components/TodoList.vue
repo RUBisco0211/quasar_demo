@@ -1,5 +1,5 @@
 <template>
-  <q-list class="bg-white" style="border-radius: 10px" bordered>
+  <q-list style="border-radius: 10px" bordered>
     <q-item-label header>{{ props.title }}</q-item-label>
     <q-separator inset></q-separator>
     <q-expansion-item

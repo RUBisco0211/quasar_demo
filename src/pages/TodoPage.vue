@@ -40,8 +40,8 @@
             @delete="deleteTodo"
           ></todo-list>
         </q-card>
-        <div class="text-center" v-else style="opacity: 0.5">
-          <q-icon name="done_all" size="100px" color="primary"></q-icon>
+        <div class="text-center q-ma-lg" v-else style="opacity: 0.5">
+          <q-icon name="bi-check-all" size="100px" color="primary"></q-icon>
           <div class="text-h6 text-primary text-center">暂无任务</div>
         </div>
       </div>

@@ -170,7 +170,6 @@ import MenuList from 'src/components/MenuList.vue';
 import BreadCrumbs from 'src/components/BreadCrumbs.vue';
 import FloatingActionButton from 'src/components/FloatingActionButton.vue';
 import { ref } from 'vue';
-import { useRouter } from 'vue-router';
 
 const miniState = ref(false);
 const leftDrawerOpen = ref(false);

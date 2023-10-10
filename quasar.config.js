@@ -55,8 +55,8 @@ module.exports = configure(function (ctx) {
       vueRouterMode: 'history', // available values: 'hash', 'history'
       env: {
         API: ctx.dev
-          ? 'http://150.158.156.90/api'
-          : 'http://150.158.156.90/api',
+          ? 'https://geoapi.qweather.com'
+          : 'https://geoapi.qweather.com',
       },
 
       // transpile: false,
@@ -92,7 +92,14 @@ module.exports = configure(function (ctx) {
 
     // https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-framework
     framework: {
-      config: {},
+      plugins: ['LocalStorage', 'Dialog', 'Notify', 'Loading', 'LoadingBar'],
+      config: {
+        loadingBar: {
+          color: 'secondary',
+          position: 'top',
+          size: '5px',
+        },
+      },
 
       iconSet: 'bootstrap-icons', // Quasar icon set
       // lang: 'en-US', // Quasar language pack
@@ -103,9 +110,6 @@ module.exports = configure(function (ctx) {
       //
       // components: [],
       // directives: [],
-
-      // Quasar plugins
-      plugins: ['LocalStorage', 'Dialog', 'Notify', 'Loading'],
     },
 
     // animations: 'all', // --- includes all animations

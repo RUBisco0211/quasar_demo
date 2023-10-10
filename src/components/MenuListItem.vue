@@ -1,7 +1,9 @@
 <template>
   <q-expansion-item
     v-if="props.item!.children && props.item!.children.length > 0"
-    class="q-py-md"
+    class="q-py-none text-white"
+    expand-icon-class="text-white"
+    expand-icon="bi-caret-down"
   >
     <template v-slot:header>
       <q-item-section avatar>
@@ -22,7 +24,7 @@
     v-ripple
     clickable
     :to="props.item!.path"
-    class="q-py-md"
+    class="q-py-none"
     active-class="active-item text-white"
   >
     <q-item-section avatar>

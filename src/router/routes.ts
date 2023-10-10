@@ -7,7 +7,7 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '/admin',
-        name: '',
+        name: 'admin',
         redirect: '/admin/home',
         meta: {
           icon: 'bi-inboxes-fill',
@@ -21,6 +21,7 @@ const routes: RouteRecordRaw[] = [
             meta: {
               icon: 'bi-speedometer2',
               label: '主页',
+              depth: 0,
             },
             component: () => import('pages/DashBoard.vue'),
           },
@@ -30,8 +31,19 @@ const routes: RouteRecordRaw[] = [
             meta: {
               icon: 'bi-list-check',
               label: '待办事项',
+              depth: 0,
             },
             component: () => import('pages/TodoPage.vue'),
+          },
+          {
+            path: 'weather',
+            name: 'weather',
+            meta: {
+              icon: 'bi-cloud-sun',
+              label: '天气',
+              depth: 0,
+            },
+            component: () => import('pages/WeatherPage.vue'),
           },
           {
             path: 'chart',
@@ -39,6 +51,7 @@ const routes: RouteRecordRaw[] = [
             meta: {
               icon: 'bi-pie-chart',
               label: '图表',
+              depth: 0,
             },
             component: () => import('pages/ChartPage.vue'),
           },
@@ -48,8 +61,19 @@ const routes: RouteRecordRaw[] = [
             meta: {
               icon: 'bi-people',
               label: '用户管理',
+              depth: 0,
             },
             component: () => import('pages/UserManagement.vue'),
+          },
+          {
+            path: 'document',
+            name: 'document',
+            meta: {
+              icon: 'bi-journal-code',
+              label: '文档',
+              depth: 0,
+            },
+            component: () => import('pages/DocumentPage.vue'),
           },
           {
             path: 'info',
@@ -57,6 +81,7 @@ const routes: RouteRecordRaw[] = [
             meta: {
               icon: 'bi-info-circle',
               label: '关于',
+              depth: 0,
             },
             component: () => import('pages/InfoPage.vue'),
           },
