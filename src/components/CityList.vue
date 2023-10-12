@@ -26,7 +26,7 @@
     </q-input>
     <q-card class="q-my-md" flat bordered>
       <q-list separator>
-        <q-item-label header>搜索结果</q-item-label>
+        <q-item-label header>搜索结果 {{ cities.length }} 条</q-item-label>
         <q-separator></q-separator>
         <div v-if="cities.length">
           <q-expansion-item
@@ -39,6 +39,9 @@
               <q-card-section>
                 {{ JSON.stringify(city, null, 2) }}
               </q-card-section>
+              <q-card-actions align="right">
+                <q-btn flat rounded size="md" color="primary" label="查看" @click="showWeather(city.id)"></q-btn>
+              </q-card-actions>
             </q-card>
           </q-expansion-item>
         </div>
@@ -54,7 +57,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { weatherService } from 'src/api/index';
+import { cityService } from 'src/api/index';
 import { ref } from 'vue';
 import { CityDto } from 'src/model/service/weatherModels';
 
@@ -65,10 +68,10 @@ const loading = ref(false);
 function search() {
   cities.value = [];
   loading.value = true;
-  weatherService
+  cityService
     .getCities({
       location: cityName.value,
-      key: weatherService.defaultParams.key,
+      key: cityService.defaultParams.key,
     })
     .then((response) => {
       loading.value = false;
@@ -76,6 +79,11 @@ function search() {
     })
     .catch(() => {
       loading.value = false;
-    })
+    });
+}
+
+const emit = defineEmits(["showWeather"]);
+function showWeather(cityId: string) {
+  emit("showWeather", cityId);
 }
 </script>

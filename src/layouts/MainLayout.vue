@@ -121,7 +121,7 @@
       show-if-above
       :width="250"
       :breakpoint="800"
-      class="bg-primary text-white"
+      class="bg-dark text-white"
     >
       <q-scroll-area style="height: 100%">
         <q-item to="/" style="height: 58.81px" class="text-weight-bolder">

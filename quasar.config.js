@@ -54,8 +54,13 @@ module.exports = configure(function (ctx) {
     build: {
       vueRouterMode: 'history', // available values: 'hash', 'history'
       env: {
-        weatherApi: ctx.dev ? 'https://geoapi.qweather.com' : 'https://geoapi.qweather.com',
-        testApi: ctx.dev ? 'http://localhost:8080' : 'http://localhost:8080'
+        citySearchApi: ctx.dev
+          ? 'https://geoapi.qweather.com'
+          : 'https://geoapi.qweather.com',
+        weatherApi: ctx.dev
+          ? 'https://devapi.qweather.com'
+          : 'https://devapi.qweather.com',
+        testApi: ctx.dev ? 'http://localhost:8080' : 'http://localhost:8080',
       },
 
       // transpile: false,

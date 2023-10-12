@@ -50,15 +50,13 @@
       </template>
     </q-input>
     <div style="display: flex; justify-content: center" class="q-my-md">
-      <q-btn
-        push
-        round
+      <q-btn unelevated
         color="primary"
-        size="lg"
-        class="glossy"
-        icon="bi-person-add"
-      >
-        <q-tooltip anchor="top middle" self="bottom middle"> 注册 </q-tooltip>
+        label="注册"
+        size="md"
+        class="q-py-sm"
+        style="width: 100%"
+        icon="bi-person-add">
       </q-btn>
     </div>
   </q-form>

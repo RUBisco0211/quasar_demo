@@ -42,15 +42,15 @@
     ></q-checkbox>
     <div style="display: flex; justify-content: center" class="q-my-md">
       <q-btn
-        push
-        round
+        unelevated
         color="primary"
-        size="lg"
-        class="glossy"
+        label="登录"
+        size="md"
+        class="q-py-sm"
+        style="width: 100%"
         icon="bi-fingerprint"
         @click="login"
       >
-        <q-tooltip anchor="top middle" self="bottom middle"> 登录 </q-tooltip>
       </q-btn>
     </div>
   </q-form>

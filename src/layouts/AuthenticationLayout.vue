@@ -1,7 +1,7 @@
 <template>
   <div class="fullscreen bg-grey-3">
     <div class="absolute-center" id="box">
-      <q-card flat style="border-radius: 10px">
+      <q-card flat bordered>
         <q-item class="text-weight-bolder text-white q-mx-sm">
           <q-item-section avatar>
             <q-avatar size="xl">
@@ -44,7 +44,7 @@
           ></q-route-tab>
         </q-tabs>
 
-        <div class="q-ma-lg q-pb-lg">
+        <div class="q-mx-lg q-pb-sm">
           <router-view v-slot="{ Component }">
             <keep-alive include="LogInForm, SignUpForm">
               <component :is="Component" />

@@ -1,9 +1,9 @@
 import axios, { AxiosInstance } from 'axios';
 import { Loading, QSpinnerFacebook } from 'quasar';
 
-function getAxiosInstance(url: string): AxiosInstance {
+function getAxiosInstance(baseUrl: string): AxiosInstance {
   const axiosInstance: AxiosInstance = axios.create({
-    baseURL: url,
+    baseURL: baseUrl,
     timeout: 10000,
     headers: {},
   });
