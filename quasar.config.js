@@ -30,7 +30,7 @@ module.exports = configure(function (ctx) {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-webpack/boot-files
-    boot: ['i18n', 'axios'],
+    boot: ['axios'],
 
     // https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-css
     css: ['app.scss'],
@@ -54,9 +54,8 @@ module.exports = configure(function (ctx) {
     build: {
       vueRouterMode: 'history', // available values: 'hash', 'history'
       env: {
-        API: ctx.dev
-          ? 'https://geoapi.qweather.com'
-          : 'https://geoapi.qweather.com',
+        weatherApi: ctx.dev ? 'https://geoapi.qweather.com' : 'https://geoapi.qweather.com',
+        testApi: ctx.dev ? 'http://localhost:8080' : 'http://localhost:8080'
       },
 
       // transpile: false,
@@ -100,7 +99,7 @@ module.exports = configure(function (ctx) {
           size: '5px',
         },
       },
-
+      lang: 'zh-CN',
       iconSet: 'bootstrap-icons', // Quasar icon set
       // lang: 'en-US', // Quasar language pack
 

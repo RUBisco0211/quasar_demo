@@ -63,6 +63,7 @@ const cities = ref<CityDto[]>([]);
 const loading = ref(false);
 
 function search() {
+  cities.value = [];
   loading.value = true;
   weatherService
     .getCities({
@@ -72,6 +73,9 @@ function search() {
     .then((response) => {
       loading.value = false;
       cities.value = response.data.location;
-    });
+    })
+    .catch(() => {
+      loading.value = false;
+    })
 }
 </script>
