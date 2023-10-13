@@ -60,6 +60,9 @@ module.exports = configure(function (ctx) {
         weatherApi: ctx.dev
           ? 'https://devapi.qweather.com'
           : 'https://devapi.qweather.com',
+        newsApi: ctx.dev
+          ? 'https://api.qqsuu.cn'
+          : 'https://api.qqsuu.cn',
         testApi: ctx.dev ? 'http://localhost:8080' : 'http://localhost:8080',
       },
 

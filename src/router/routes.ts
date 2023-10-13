@@ -36,6 +36,16 @@ const routes: RouteRecordRaw[] = [
             component: () => import('pages/TodoPage.vue'),
           },
           {
+            path: 'news',
+            name: 'news',
+            meta: {
+              icon: 'bi-newspaper',
+              label: '新闻',
+              depth: 0,
+            },
+            component: () => import('pages/NewsPage.vue'),
+          },
+          {
             path: 'weather',
             name: 'weather',
             meta: {

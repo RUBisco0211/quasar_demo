@@ -4,8 +4,8 @@
     <div class="col-12 col-md-4">
       <city-list @show-weather="showWeather"></city-list>
     </div>
-    <div class="col-12 col-md-8">
-      <weather-now-card :weather="weatherNow"></weather-now-card>
+    <div class="col-12 col-md-4">
+      <weather-now-card :weather-now="weatherNow"></weather-now-card>
     </div>
   </div>
 </template>
@@ -15,7 +15,7 @@ import WeatherNowCard from 'src/components/WeatherNowCard.vue';
 import { weatherService } from 'src/api';
 import { ref } from 'vue';
 
-const weatherNow = ref(null);
+const weatherNow = ref({});
 function showWeather(cityId: string) {
   weatherService
     .getWeatherNow({

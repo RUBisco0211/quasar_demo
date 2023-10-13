@@ -30,18 +30,29 @@
         <q-separator></q-separator>
         <div v-if="cities.length">
           <q-expansion-item
+            expand-icon-toggle
             v-for="city in cities"
             :key="city.id"
-            :label="city.name"
-            :caption="city.adm1"
-          >
+            ><template v-slot:header>
+              <q-item-section>
+                <q-item-label>{{ city.name }}</q-item-label>
+                <q-item-label caption>{{ city.adm1 }}</q-item-label>
+              </q-item-section>
+              <q-item-section side>
+                <q-btn
+                  flat
+                  round
+                  size="md"
+                  color="primary"
+                  icon="bi-eye"
+                  @click="showWeather(city.id)"
+                ></q-btn>
+              </q-item-section>
+            </template>
             <q-card>
               <q-card-section>
                 {{ JSON.stringify(city, null, 2) }}
               </q-card-section>
-              <q-card-actions align="right">
-                <q-btn flat rounded size="md" color="primary" label="查看" @click="showWeather(city.id)"></q-btn>
-              </q-card-actions>
             </q-card>
           </q-expansion-item>
         </div>
@@ -82,8 +93,8 @@ function search() {
     });
 }
 
-const emit = defineEmits(["showWeather"]);
+const emit = defineEmits(['showWeather']);
 function showWeather(cityId: string) {
-  emit("showWeather", cityId);
+  emit('showWeather', cityId);
 }
 </script>

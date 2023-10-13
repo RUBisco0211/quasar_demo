@@ -63,4 +63,3 @@ function deleteItem(index: number) {
   }
 }
 </style>
-../model/models
