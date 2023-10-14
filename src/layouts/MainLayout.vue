@@ -166,9 +166,9 @@
 </template>
 
 <script lang="ts" setup>
-import MenuList from 'src/components/MenuList.vue';
-import BreadCrumbs from 'src/components/BreadCrumbs.vue';
-import FloatingActionButton from 'src/components/FloatingActionButton.vue';
+import MenuList from 'src/components/common/menu/MenuList.vue';
+import BreadCrumbs from 'src/components/common/BreadCrumbs.vue';
+import FloatingActionButton from 'src/components/common/FloatingActionButton.vue';
 import { ref } from 'vue';
 
 const miniState = ref(false);

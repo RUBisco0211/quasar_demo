@@ -24,9 +24,9 @@
         ></q-btn>
       </template>
     </q-input>
-    <q-card class="q-my-md" flat bordered>
+    <q-card class="q-my-md text-grey-7" flat bordered>
       <q-list separator>
-        <q-item-label header>搜索结果 {{ cities.length }} 条</q-item-label>
+        <q-card-section>搜索结果 {{ cities.length }} 条</q-card-section>
         <q-separator></q-separator>
         <div v-if="cities.length">
           <q-expansion-item

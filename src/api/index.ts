@@ -1,3 +1,3 @@
-export { weatherService } from './weather';
-export { cityService } from './city';
-export { newsService } from './news';
+export { weatherService } from './service/weather';
+export { cityService } from './service/city';
+export { newsService } from './service/news';

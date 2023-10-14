@@ -44,7 +44,7 @@
   </q-list>
 </template>
 <script setup lang="ts">
-import { Task } from '../model/models';
+import { Task } from 'src/model/models';
 
 const props = defineProps({
   list: Array<Task>,

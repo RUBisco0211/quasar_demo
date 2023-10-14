@@ -23,11 +23,10 @@
         <q-separator></q-separator>
         <q-tabs
           class="text-grey-8 q-pt-sm q-px-sm"
-          dense
           inline-label
           active-color="primary"
           narrow-indicator
-          align="left"
+          align="center"
           :breakpoint="0"
         >
           <q-route-tab

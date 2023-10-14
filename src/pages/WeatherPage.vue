@@ -10,8 +10,8 @@
   </div>
 </template>
 <script setup lang="ts">
-import CityList from 'src/components/CityList.vue';
-import WeatherNowCard from 'src/components/WeatherNowCard.vue';
+import CityList from 'src/components/weather/CityList.vue';
+import WeatherNowCard from 'src/components/weather/WeatherNowCard.vue';
 import { weatherService } from 'src/api';
 import { ref } from 'vue';
 
@@ -23,7 +23,6 @@ function showWeather(cityId: string) {
       location: cityId,
     })
     .then((response) => {
-      console.log(response);
       weatherNow.value = response.data.now;
     });
 }

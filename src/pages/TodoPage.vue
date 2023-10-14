@@ -86,7 +86,7 @@
 </template>
 
 <script lang="ts" setup>
-import TodoList from '../components/TodoList.vue';
+import TodoList from '../components/todo/TodoList.vue';
 import { computed, ref } from 'vue';
 import { useQuasar } from 'quasar';
 import { Task } from '../model/models';
