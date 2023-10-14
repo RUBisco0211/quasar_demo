@@ -70,7 +70,7 @@
 <script setup lang="ts">
 import { cityService } from 'src/api/index';
 import { ref } from 'vue';
-import { CityDto } from 'src/model/service/weatherModels';
+import { CityDto } from 'src/model/service/cityModels';
 
 const cityName = ref('');
 const cities = ref<CityDto[]>([]);

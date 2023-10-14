@@ -11,9 +11,7 @@
     </q-item-section>
     <q-space></q-space>
     <q-item-section side>
-      <q-btn-group flat>
         <q-btn round flat icon="bi-three-dots"></q-btn>
-      </q-btn-group>
     </q-item-section>
   </q-item>
 </template>

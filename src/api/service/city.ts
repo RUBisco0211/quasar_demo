@@ -1,5 +1,5 @@
 import { getAxiosInstance } from "src/boot/axios";
-import { CityParams, CityDto } from "src/model/service/weatherModels";
+import { CityParams } from "src/model/service/cityModels";
 
 const cityAxiosInstance = getAxiosInstance(process.env.citySearchApi!);
 

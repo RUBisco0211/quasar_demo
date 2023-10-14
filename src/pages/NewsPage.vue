@@ -5,7 +5,17 @@
       <news-search @pass-key="search" @random="getRandom"></news-search>
     </div>
     <div class="col-12 col-md-6">
-      <news-list :news-list="newsList"></news-list>
+      <news-list :news-list="newsList" v-if="newsList.length"></news-list>
+      <q-card
+        flat
+        bordered
+        class="text-center q-ma-sm"
+        v-else
+        style="opacity: 0.5"
+      >
+        <q-icon name="bi-archive" size="100px" color="primary"></q-icon>
+        <div class="text-h6 text-primary text-center">暂无结果</div>
+      </q-card>
     </div>
   </div>
 </template>
